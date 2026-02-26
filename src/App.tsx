@@ -69,56 +69,56 @@ const SERVICES: Service[] = [
     id: 1,
     title: "Izaje con Grúas Telescópicas",
     description: "Operaciones de izaje de alta precisión con los quipos adecuados para cargas pesadas.",
-    image: "public/img/grua.webp",
+    image: "/img/grua.webp",
     icon: <Construction className="w-6 h-6" />
   },
   {
     id: 2,
     title: "Camión Grúa",
     description: "Versatilidad y potencia para el transporte e izaje de materiales en un solo equipo.",
-    image: "public/img/camion-grua.webp",
+    image: "/img/camion-grua.webp",
     icon: <Truck className="w-6 h-6" />
   },
   {
     id: 3,
     title: "Transporte en Cama Baja",
     description: "Traslado de maquinaria pesada y sobredimensionada a nivel nacional con seguridad.",
-    image: "public/img/camabaja.webp",
+    image: "/img/camabaja.webp",
     icon: <Box className="w-6 h-6" />
   },
   {
     id: 4,
     title: "Montacargas",
     description: "Soluciones eficientes para el movimiento de carga en almacenes y proyectos industriales.",
-    image: "public/img/montacargas.webp",
+    image: "/img/montacargas.webp",
     icon: <Settings className="w-6 h-6" />
   },
   {
     id: 5,
     title: "Canastilla para Trabajos en Altura",
     description: "Equipos certificados para garantizar la seguridad del personal en labores elevadas.",
-    image: "public/img/canastilla.webp",
+    image: "/img/canastilla.webp",
     icon: <ArrowUpCircle className="w-6 h-6" />
   },
   {
     id: 6,
     title: "Mini Cargador",
     description: "Maquinaria compacta y potente para espacios reducidos y movimiento de tierras.",
-    image: "public/img/minicargador.webp",
+    image: "/img/minicargador.webp",
     icon: <Maximize className="w-6 h-6" />
   },
   {
     id: 7,
     title: "Plataforma Elevadora de Tijeras",
     description: "Estabilidad y alcance vertical para mantenimientos e instalaciones industriales.",
-    image: "public/img/elevador.webp",
+    image: "/img/elevador.webp",
     icon: <ArrowUpCircle className="w-6 h-6" />
   },
   {
     id: 8,
     title: "Evaluación Técnica Previa",
     description: "Visitas de campo y planeamiento de ingeniería para asegurar el éxito de cada maniobra.",
-    image: "public/img/inspeccion.webp",
+    image: "/img/inspeccion.webp",
     icon: <ClipboardList className="w-6 h-6" />
   }
 ];
@@ -132,12 +132,12 @@ const PROCESS_STEPS: ProcessStep[] = [
 ];
 
 const EQUIPMENTS: Equipment[] = [
-  { id: 1, name: "Grúa Telescópica", image: "public/img/grua.webp" },
-  { id: 2, name: "Camión Grúa", image: "public/img/camion-grua.webp" },
-  { id: 3, name: "Cama Baja", image: "public/img/camabaja.webp" },
-  { id: 4, name: "Montacargas", image: "public/img/montacargas.webp" },
-  { id: 5, name: "Mini Cargador", image: "public/img/minicargador.webp" },
-  { id: 6, name: "Elevadora de Tijeras", image: "public/img/elevador.webp" }
+  { id: 1, name: "Grúa Telescópica", image: "/img/grua.webp" },
+  { id: 2, name: "Camión Grúa", image: "/img/camion-grua.webp" },
+  { id: 3, name: "Cama Baja", image: "/img/camabaja.webp" },
+  { id: 4, name: "Montacargas", image: "/img/montacargas.webp" },
+  { id: 5, name: "Mini Cargador", image: "/img/minicargador.webp" },
+  { id: 6, name: "Elevadora de Tijeras", image: "/img/elevador.webp" }
 ];
 
 const DIFFERENTIALS: Differential[] = [
@@ -169,7 +169,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             {/* Logo Placeholder */}
             <div className="flex items-center gap-2">
-              <img src="public/img/logo.webp" alt="GRUPESA" className="h-10 w-auto" />
+              <img src="/img/logo.webp" alt="GRUPESA" className="h-10 w-auto" />
               <span className="text-2xl font-display font-bold tracking-tighter text-brand-dark">GRUPESA</span>
             </div>
           </div>
@@ -235,7 +235,7 @@ const Hero = () => {
     <section className="relative h-screen flex items-center overflow-hidden bg-brand-dark">
       <div className="absolute inset-0 z-0">
         <img 
-          src="public/img/fondo.webp" 
+          src="/img/fondo.webp" 
           alt="Hero Background" 
           className="w-full h-full object-cover opacity-40"
           referrerPolicy="no-referrer"
@@ -625,7 +625,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="public/img/logo.webp" alt="GRUPESA Logo" className="h-10 w-auto" />
+              <img src="/img/logo.webp" alt="GRUPESA Logo" className="h-10 w-auto" />
               <span className="text-2xl font-display font-bold tracking-tighter">GRUPESA</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
