@@ -1,0 +1,7 @@
+{
+  "name": "Grupesa - Soluciones de Izaje y Transporte Pesado",
+  "description": "Servicios integrales de izaje industrial, transporte pesado y alquiler de equipos especializados en todo el Perú.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
