@@ -692,8 +692,14 @@ const Footer = () => {
 const WhatsAppButton = () => {
   return (
     <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+
+      {/* BOTÓN LLAMADA */}
       <a 
-        href="tel:+51960657438" 
+        href="tel:+51960657438"
+        onClick={() => window.gtag && window.gtag('event', 'click_llamada', {
+          event_category: 'contacto',
+          event_label: 'telefono_24_7'
+        })}
         className="w-16 h-16 bg-brand-red text-white rounded-full flex flex-col items-center justify-center shadow-2xl hover:scale-110 transition-transform group relative"
       >
         <Phone size={24} />
@@ -702,10 +708,16 @@ const WhatsAppButton = () => {
           Llamar ahora 24/7
         </span>
       </a>
+
+      {/* BOTÓN WHATSAPP */}
       <a 
-        href="https://wa.me/51960657438" 
-        target="_blank" 
+        href="https://wa.me/51960657438"
+        target="_blank"
         rel="noopener noreferrer"
+        onClick={() => window.gtag && window.gtag('event', 'click_whatsapp', {
+          event_category: 'contacto',
+          event_label: 'whatsapp_flotante'
+        })}
         className="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform group relative"
       >
         <svg 
@@ -719,6 +731,7 @@ const WhatsAppButton = () => {
           ¿Necesitas ayuda? ¡Contáctanos!
         </span>
       </a>
+
     </div>
   );
 };
