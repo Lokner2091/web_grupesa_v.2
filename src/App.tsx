@@ -482,6 +482,12 @@ const QuotationForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (typeof window !== "undefined" && (window as any).gtag) {
+  (window as any).gtag("event", "envio_formulario", {
+    event_category: "contacto",
+    event_label: "cotizacion_web",
+  });
+}
     console.log('Form submitted:', formData);
     
     // Construct mailto link as a fallback for static site
