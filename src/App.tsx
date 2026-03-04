@@ -480,14 +480,15 @@ const QuotationForm = () => {
     descripcion: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (typeof window !== "undefined" && (window as any).gtag) {
-  (window as any).gtag("event", "envio_formulario", {
-    event_category: "contacto",
-    event_label: "cotizacion_web",
+  const handleSubmit = (e) => {
+  e.preventDefault();
+
+  gtag('event', 'conversion', {
+    'send_to': 'AW-17980073436/2sCpCIed1f8bENzLyP1C'
   });
-}
+
+  window.location.href = mailto;
+};
     console.log('Form submitted:', formData);
     
     // Construct mailto link as a fallback for static site
