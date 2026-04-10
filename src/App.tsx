@@ -480,20 +480,21 @@ const QuotationForm = () => {
     descripcion: ''
   });
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
 
-  gtag('event', 'conversion', {
-    'send_to': 'AW-17980073436/2sCpCIed1f8bENzLyP1C'
-  });
+  // 🔥 Evento de conversión Google Ads
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-17980073436/2sCpCIed1f8bENzLyP1C'
+    });
+  }
 
-  window.location.href = mailto;
-};
-    console.log('Form submitted:', formData);
-    
-    // Construct mailto link as a fallback for static site
-    const subject = `Cotización: ${formData.servicio} - ${formData.empresa}`;
-    const body = `
+  console.log('Form submitted:', formData);
+
+  // 📩 Construcción del correo
+  const subject = `Cotización: ${formData.servicio} - ${formData.empresa}`;
+  const body = `
 Empresa: ${formData.empresa}
 Contacto: ${formData.contacto}
 Teléfono: ${formData.telefono}
@@ -502,12 +503,13 @@ Servicio: ${formData.servicio}
 Ubicación: ${formData.ubicacion}
 Fecha: ${formData.fecha}
 Descripción: ${formData.descripcion}
-    `.trim();
-    
-    window.location.href = `mailto:gruasytransportepesadoperu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    alert('Gracias por su interés. Se ha abierto su cliente de correo para enviar la solicitud a gruasytransportepesadoperu@gmail.com');
-  };
+  `.trim();
+
+  // 📧 Abrir cliente de correo
+  window.location.href = `mailto:gruasytransportepesadoperu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  alert('Gracias por su interés. Se abrió su correo para enviar la solicitud.');
+};
 
   return (
     <section id="cotizacion" className="py-24 bg-gray-50">
