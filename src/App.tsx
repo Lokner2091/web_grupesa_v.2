@@ -483,10 +483,11 @@ const QuotationForm = () => {
 const handleSubmit = (e) => {
   e.preventDefault();
 
-  // 🔥 Evento de conversión Google Ads
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-17980073436/2sCpCIed1f8bENzLyP1C'
+  // Evento para Google Tag Manager
+  if (typeof window !== "undefined") {
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({
+      event: "formulario_cotizacion"
     });
   }
 
@@ -698,13 +699,11 @@ const Footer = () => {
   );
 };
 
-const MEASUREMENT_ID = "G-Y7DWWWTMBG";
-
 function trackEvent(name: string, params: Record<string, any>) {
-  // Evita error si aún no cargó gtag
-  if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
-    (window as any).gtag("event", name, {
-      send_to: MEASUREMENT_ID,
+  if (typeof window !== "undefined") {
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({
+      event: name,
       ...params,
     });
   }
